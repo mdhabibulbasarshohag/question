@@ -1,0 +1,221 @@
+:root {
+    --primary-background-color: #f4f4f9;
+    --question-background-color: #ffffff;
+    --select-background-color: #cce5ff;
+    --text-color: #333333;
+    --box-bg-color: #007bff;
+    --border-color: #5a5aff;
+    --border-radius: 15px;
+    --box-border-radius: 15px;
+    --button-background-color: #4caf50;
+    --button-hover-color: #45a049;
+    --button-padding: 12px 20px;
+    --circle-active-color: #007bff;
+    --circle-inactive-color: #cccccc;
+    --label-background-color: #8dadff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #dae2f8, #d6a4a4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    background-color: var(--primary-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* intersection section start ------------------------------------------------------------- */
+
+
+.intersection {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.intersection.active-intersection {
+    display: block;
+}
+
+.intersection-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.intersection-subtitle{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* intersection section end ------------------------------------------------------------- */
+
+/* question section start ------------------------------------------------------------- */
+
+.quiz-title {
+    font-size: 24px;
+    color: var(--text-color);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.quiz-question {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.question-body {
+    margin-bottom: 20px;
+
+}
+
+.question {
+    display: none;
+}
+
+.question.active-question {
+    display: block;
+}
+
+.question-from {
+    padding: 10px;
+    background: var(--question-background-color);
+    border-radius: var(--box-border-radius);
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* question section end ------------------------------------------------------------- */
+
+
+
+/* radio and label start ------------------------------------------------------------- */
+.radio {
+    display: none;
+}
+
+.label {
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+    background-color: var(--select-background-color);
+    border-radius: var(--box-border-radius);
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.label:hover {
+    transform: scale(1.05);
+    border-color: var(--border-color);
+}
+
+
+.radio:checked+.label {
+    background-color: var(--label-background-color);
+    color: white;
+}
+
+.selected-answer {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.selected-answer.green {
+    color: green;
+}
+
+.selected-answer.red {
+    color: red;
+}
+
+/* radio and label end ------------------------------------------------------------- */
+
+/* steps section start -------------------------------------------------------------*/
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
+
+.steps.visible {
+    visibility: visible;
+}
+
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--circle-inactive-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.circle.active {
+    background: var(--circle-active-color);
+    color: white;
+}
+
+/* steps section end ------------------------------------------------------------- */
+
+/* submit button start ------------------------------------------------------------*/
+
+.submit-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.submit-btn button {
+    flex: 1;
+    padding: var(--button-padding);
+    background: var(--button-background-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn button:hover {
+    background: var(--button-hover-color);
+}
+
+
+/* submit button end ------------------------------------------------------------*/
